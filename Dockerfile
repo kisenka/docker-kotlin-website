@@ -4,15 +4,14 @@ RUN yum install -y \
     which \
     java-1.7.0-openjdk.x86_64
 
-ADD scripts/ /
-RUN chmod +x /*.sh
+ADD scripts/ /scripts/
+RUN chmod +x /scripts/*.sh
 
-RUN /install-wkhtml2pdf.sh
-ADD stuff/10-wkhtmltopdf.conf /etc/fonts/conf.d/10-wkhtmltopdf.conf
+RUN /scripts/install-wkhtml2pdf.sh && \
+    mv /scripts/10-wkhtmltopdf.conf /etc/fonts/conf.d/10-wkhtmltopdf.conf
 
-RUN cd / && \
-    wget https://github.com/JetBrains/kotlin-grammar-generator/releases/download/v0.2/kotlin-grammar-generator.tar.gz && \
-    tar -xzf ./kotlin-grammar-generator.tar.gz && \
-    rm ./kotlin-grammar-generator.tar.gz
+RUN cd /scripts && \
+    /scripts/install-kotlin-grammar-generator.sh && \
+    /scripts/install-dokka.sh
 
 CMD rake preview
