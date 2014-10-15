@@ -11,11 +11,10 @@ cp -r /data/{_data,_includes,_layouts,_plugins,_rake,assets,css,js,_config.yml} 
 
 # Generate source docs
 java -jar /scripts/dokka.jar \
-    /kotlin/libraries/stdlib/src/ \
+    /kotlin/libraries/stdlib/src /kotlin/core/builtins -samples /kotlin/libraries/stdlib/test \
+    -include /kotlin/libraries/stdlib/src/Module.md \
     -output $JEKYLL_TMP_DIR/api \
-    -module $API_MODULE_NAME
-
-#mv $JEKYLL_TMP_DIR/api/$API_MODULE_NAME/* $JEKYLL_TMP_DIR/api/
+    -module $API_MODULE_NAME \
 
 # Build static pages
 jekyll build --source=$JEKYLL_TMP_DIR --destination=$JEKYLL_TMP_DIR/_site
