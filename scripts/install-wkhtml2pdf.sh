@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # WKHTML2PDF
-wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-centos6-amd64.rpm
-yum localinstall -y wkhtmltox-0.12.1_linux-centos6-amd64.rpm
-rm wkhtmltox-0.12.1_linux-centos6-amd64.rpm
+wget http://kent.dl.sourceforge.net/project/wkhtmltopdf/0.12.2.1/wkhtmltox-0.12.2.1_linux-centos6-amd64.rpm
+yum localinstall -y wkhtmltox-0.12.2.1_linux-centos6-amd64.rpm
+rm wkhtmltox-0.12.2.1_linux-centos6-amd64.rpm
 
 # Fonts
 yum install -y \

@@ -15,7 +15,7 @@ unzip $JEKYLL_TMP_DIR/api-docs.zip -d $JEKYLL_TMP_DIR/api
 cp -r /data/{_data,_includes,_layouts,_plugins,_rake,assets,css,js,_config.yml} $JEKYLL_TMP_DIR
 
 # Build static pages
-jekyll build --source=$JEKYLL_TMP_DIR --destination=$JEKYLL_TMP_DIR/_site
+jekyll build --source=$JEKYLL_TMP_DIR --verbose --destination=$JEKYLL_TMP_DIR/_site
 
 # Copy to site source
 \cp -rf $JEKYLL_TMP_DIR/_site/api/* $API_OUT_DIR
