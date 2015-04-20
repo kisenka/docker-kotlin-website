@@ -3,7 +3,7 @@
 JEKYLL_TMP_DIR=/tmp/kotlin-api-docs
 API_OUT_DIR=/data/_api-docs/latest/jvm/stdlib
 API_MODULE_NAME=stdlib
-API_DOCS_SRC_URL=https://teamcity.jetbrains.com/guestAuth/repository/download/Kotlin_StandardLibraryDocumentation/421865:id/stdlib-docs.zip
+API_DOCS_SRC_URL=https://teamcity.jetbrains.com/guestAuth/repository/download/Kotlin_StandardLibraryDocumentation/publish.tcbuildtag/stdlib-docs.zip
 
 mkdir -p $JEKYLL_TMP_DIR $API_OUT_DIR
 
